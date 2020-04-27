@@ -70,7 +70,7 @@ public class JacksonUtil {
     }
     public static <T> T readValueRefer(String jsonStr, TypeReference typeReference) {
     	try {
-			return getInstance().readValue(jsonStr, typeReference);		// new TypeReference<T>() { }
+			return (T) getInstance().readValue(jsonStr, typeReference);		// new TypeReference<T>() { }
 		} catch (JsonParseException e) {
 			logger.error(e.getMessage(), e);
 		} catch (JsonMappingException e) {
